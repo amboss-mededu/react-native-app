@@ -1,27 +1,23 @@
 import React from 'react';
 import {AppRegistry, StyleSheet, Text, View} from 'react-native';
+import { Article } from './components/Article';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 const App = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.highScoresTitle}>
-        This is a React native view.
-      </Text>
-    </View>
+    <SafeAreaProvider>
+      <View style={styles.container}>
+        <Article/>
+      </View>
+    </SafeAreaProvider>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#FFFFFF',
-  },
-  highScoresTitle: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+    paddingTop: 22
   },
 });
 
