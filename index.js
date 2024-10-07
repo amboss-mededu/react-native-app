@@ -1,29 +1,24 @@
 import React from 'react';
-import {AppRegistry, StyleSheet, Text, View} from 'react-native';
-
+import {Alert, AppRegistry, Text, View} from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { PrimaryButton } from './components/native/PrimaryButton';
+import { PrimaryButton as DSPrimaryButton } from './components/shared/PrimaryButton';
 const App = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.highScoresTitle}>
-        This is a React native view.
-      </Text>
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView style={{ flex: 1, flexDirection: 'column', padding: 20, gap: 20 }}>
+        <Text style={{fontSize: 24}}>DS PrimaryButton from IOS</Text>
+        <View style={{height: 48}}>
+          <PrimaryButton title="Primary Button" onClick={() => Alert.alert(`clicked`)}/>
+        </View>
+        <Text style={{fontSize: 24}}>React native Button styled as DS PrimaryButton</Text>
+        <View style={{height: 48, width: 200}}>
+          <DSPrimaryButton title="Primary Button" onPress={() => Alert.alert('clicked')} />
+        </View>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#FFFFFF',
-  },
-  highScoresTitle: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-});
 
 // Module name
 AppRegistry.registerComponent('App', () => App);

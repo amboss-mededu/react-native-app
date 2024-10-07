@@ -26,3 +26,6 @@ ios/**/xcshareddata
 #CocoaPods
 ios/Pods
 ios/Podfile.lock
+
+.xcode.local.env
+ios-avocado-spring
