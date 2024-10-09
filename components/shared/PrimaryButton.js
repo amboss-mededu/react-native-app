@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, StyleSheet, Pressable, Touchable, TouchableOpacity } from 'react-native';
+import { Text, StyleSheet, Pressable } from 'react-native';
 
 export function PrimaryButton(props) {
   const { onPress, title } = props;
@@ -25,9 +25,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#047A88',
   },
   text: {
+    fontFamily: 'Lato',
     fontSize: 16,
     lineHeight: 18,
-    fontWeight: '600',
+    fontWeight: '700',
     color: 'white',
   },
   pressedText: {

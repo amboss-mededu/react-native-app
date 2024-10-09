@@ -1,23 +1,26 @@
 import React from 'react';
-import {Alert, AppRegistry, Text, View} from 'react-native';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import { PrimaryButton } from './components/native/PrimaryButton';
-import { PrimaryButton as DSPrimaryButton } from './components/shared/PrimaryButton';
+import {AppRegistry} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Home } from './components/screens/Home';
+import { Buttons } from './components/screens/Buttons';
+import { Article } from './components/screens/Article';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
+const Stack = createNativeStackNavigator();
+
 const App = () => {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={{ flex: 1, flexDirection: 'column', padding: 20, gap: 20 }}>
-        <Text style={{fontSize: 24}}>DS PrimaryButton from IOS</Text>
-        <View style={{height: 48}}>
-          <PrimaryButton title="Primary Button" onClick={() => Alert.alert(`clicked`)}/>
-        </View>
-        <Text style={{fontSize: 24}}>React native Button styled as DS PrimaryButton</Text>
-        <View style={{height: 48, width: 200}}>
-          <DSPrimaryButton title="Primary Button" onPress={() => Alert.alert('clicked')} />
-        </View>
-      </SafeAreaView>
-    </SafeAreaProvider>
-  );
+    <GestureHandlerRootView>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Buttons" component={Buttons} />
+          <Stack.Screen name="Article" component={Article} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </GestureHandlerRootView>
+  );  
 };
 
 // Module name
