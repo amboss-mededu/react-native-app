@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "expo start"
+    "start": "npx react-native start"
   },
   "dependencies": {
     "@expo/vector-icons": "^14.0.2",
