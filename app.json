@@ -10,6 +10,9 @@
     ],
     "ios": {
       "bundleIdentifier": "com.anonymous.myreactnativeapp"
+    },
+    "android": {
+      "package": "com.anonymous.myreactnativeapp"
     }
   }
 }
